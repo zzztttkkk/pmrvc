@@ -36,6 +36,8 @@ def get_require_modules(fp: str):
 	data = {}
 	session = PipSession()
 	for r in parse_requirements(fp, session):
+		if "://" in r.requirement:
+			continue
 		if "==" not in r.requirement:  # must equals
 			raise ValueError("bad requirements")
 		(k, v) = r.requirement.split("==")
