@@ -5,7 +5,7 @@ import sys
 
 def get_installed_modules():
 	txt = []
-	a = "\\ "
+	a = "\\\\ "
 	for line in os.popen(f"{sys.executable.replace(' ', a)} -m pip list --format json"):
 		txt.append(line)
 
