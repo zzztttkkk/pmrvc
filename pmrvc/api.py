@@ -5,7 +5,7 @@ import sys
 
 def get_installed_modules():
 	txt = []
-	for line in os.popen(f"{sys.executable} -m pip list --format json"):
+	for line in os.popen(f"'{sys.executable}' -m pip list --format json"):
 		txt.append(line)
 
 	if not txt:
